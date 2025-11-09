@@ -13151,7 +13151,7 @@ def httpx():
             logger.warning("🌐 httpx called without target parameter")
             return jsonify({"error": "Target parameter is required"}), 400
 
-        command = f"httpx -l {target} -t {threads}"
+        command = f"$(go env GOPATH)/bin/httpx -l {target} -t {threads}"
 
         if probe:
             command += " -probe"
